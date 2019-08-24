@@ -1,0 +1,26 @@
+﻿
+@model Controllers2.Models.LoginModel
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/Shared/_View.cshtml";
+}
+
+
+@using (Html.BeginForm("LogIn", "Home"))
+{
+    <p>
+        @Html.LabelFor(x => x.Login)
+        @Html.EditorFor(x => x.Login)
+        @Html.ValidationMessageFor(x => x.Login)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.Password)
+        @Html.ValidationMessageFor(x => x.Password);
+    </p>
+    
+    @Html.ValidationSummary(true)
+
+    <input type="submit" value="LogIn" />
+}

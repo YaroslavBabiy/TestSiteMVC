@@ -1,0 +1,43 @@
+﻿@model Controllers2.Models.RegistrationModel
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_View.cshtml";
+}
+
+
+@using (Html.BeginForm("SignIn", "Home"))
+{
+    <p>
+        @Html.LabelFor(x => x.Email)
+        @Html.EditorFor(x => x.Email)
+        @Html.ValidationMessageFor(x => x.Email)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Login)
+        @Html.EditorFor(x => x.Login)
+        @Html.ValidationMessageFor(x => x.Login)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.Password)
+        @Html.ValidationMessageFor(x => x.Password)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.PasswordConfirm)
+        @Html.EditorFor(x => x.PasswordConfirm)
+        @Html.ValidationMessageFor(x => x.PasswordConfirm)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.TermsAccepted)
+        @Html.EditorFor(x => x.TermsAccepted)
+        @Html.ValidationMessageFor(x => x.TermsAccepted)
+    </p>
+
+    @Html.ValidationSummary(true)
+
+    <input type="submit" value="Enter" />
+}

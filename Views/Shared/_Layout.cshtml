@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.8.2.min.js" type="text/javascript">
+    </script>
+</head>
+<body>
+    <div style="position: fixed; top: 50px; right: 0;">
+        @Html.ActionLink("LogIn", "LogIn")
+        <br>
+        @Html.ActionLink("SignIn", "SignIn")
+        <br>
+    </div>
+    @*Меню нашого сайта*@
+    <div>
+        @Html.ActionLink("Домашня", "HomePage") | @Html.ActionLink("Новини", "NewsPage") | @Html.ActionLink("Про нас", "AboutPage")
+    </div>
+    <br />
+
+    @if (IsSectionDefined("Body"))
+    {
+        @RenderSection("Body");
+    }
+    else
+    {
+        <h5>Default body</h5>
+    }
+
+    @*Проверка наличия секции Footer в текущем представлении*@
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer");
+    }
+    else
+    {
+        <h6>Default footer</h6>
+    }
+</body>
+</html>
